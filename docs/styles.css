@@ -781,6 +781,31 @@ section[id] { scroll-margin-top: 96px; }
   .contact__mail { min-height: 60px; padding: 0 20px; }
 }
 
+/* Sans JavaScript : le burger ne peut rien ouvrir, on rétablit des liens
+   qui passent à la ligne. La classe .no-js est retirée dès que script.js
+   démarre. */
+@media (max-width: 900px) {
+  .no-js .burger { display: none; }
+  .no-js .nav {
+    position: static;
+    max-height: none;
+    visibility: visible;
+    padding: 0;
+    border-bottom: 0;
+  }
+  .no-js .nav__liens {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4px 16px;
+    font-size: 15px;
+    padding: 0 0 10px;
+  }
+  .no-js .nav__liens a { padding: 6px 0; border-bottom: 0; }
+  .no-js .nav__cta { margin: 0 0 12px; width: auto; }
+  .no-js .entete__barre { flex-wrap: wrap; padding-top: 8px; }
+}
+
 /* Impression */
 @media print {
   .entete, .burger, .contact, .pied__liens { display: none; }

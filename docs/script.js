@@ -4,6 +4,10 @@
 (function () {
   "use strict";
 
+  /* Dès que ce fichier s'exécute, le menu peut fonctionner :
+     on retire .no-js pour activer le burger. */
+  document.documentElement.classList.remove("no-js");
+
   var burger = document.getElementById("burger");
   var nav = document.getElementById("nav-principal");
   if (!burger || !nav) return;
